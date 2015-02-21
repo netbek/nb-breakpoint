@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/agpl-3.0.txt AGPLv3
  */
 
-(function (w, angular, undefined) {
+(function (window, angular, undefined) {
 	'use strict';
 
 	angular
@@ -208,9 +208,9 @@
 		})();
 
 		var matchesMedia;
-		if (w.matchMedia && (matchMedia("(min-width: 0.1em)") || {}).matches) {
+		if (window.matchMedia && (matchMedia("(min-width: 0.1em)") || {}).matches) {
 			matchesMedia = function (media) {
-				return w.matchMedia(media).matches;
+				return window.matchMedia(media).matches;
 			};
 		}
 		else {
