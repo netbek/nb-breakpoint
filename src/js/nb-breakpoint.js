@@ -52,16 +52,15 @@
 		$rootScope.nbBreakpoint = nbBreakpoint;
 	}
 
-	nbBreakpoint.$inject = ['$rootScope', '$window', 'nbBreakpointConfig', '_'];
-	function nbBreakpoint ($rootScope, $window, nbBreakpointConfig, _) {
-		var $$window = angular.element($window);
+	nbBreakpoint.$inject = ['$rootScope', 'nbBreakpointConfig', '_'];
+	function nbBreakpoint ($rootScope, nbBreakpointConfig, _) {
 		var current = [];
 
 		function update () {
 			var arr = [];
 
 			angular.forEach(nbBreakpointConfig.mediaqueries, function (mq, name) {
-				if ($window.matchMedia(mq).matches) {
+				if (window.matchMedia(mq).matches) {
 					arr.push(name);
 				}
 			});
@@ -78,7 +77,12 @@
 			update();
 		}, 60);
 
-		$$window.on('resize', onWindowResize);
+		if (window.addEventListener) {
+			window.addEventListener('resize', onWindowResize, false);
+		}
+		else if (window.attachEvent) {
+			window.attachEvent('onresize', onWindowResize);
+		}
 
 		return {
 			/**
