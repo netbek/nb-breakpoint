@@ -1,27 +1,30 @@
 {
-	"name": "nb-breakpoint",
-	"version": "0.0.1",
-	"description": "AngularJS service for checking breakpoints in responsive design",
-	"homepage": "https://github.com/netbek/nb-breakpoint",
-	"author": {
-		"name": "Hein Bekker",
-		"email": "hein@netbek.co.za",
-		"url": "http://netbek.co.za"
-	},
-	"license": {
-		"type": "AGPLv3",
-		"url": "http://www.gnu.org/licenses/agpl-3.0.txt"
-	},
-	"ignore": [
-		"bower_components",
-		"node_modules",
-		"test",
-		"tests",
-		"vendor",
-		"src"
-	],
-	"dependencies": {
-		"angularjs": "1.2.x",
-		"nb-lodash": "https://github.com/netbek/nb-lodash.git#master"
-	}
+  "name": "nb-breakpoint",
+  "version": "0.0.1",
+  "description": "AngularJS service for checking breakpoints in responsive design",
+  "homepage": "https://github.com/netbek/nb-breakpoint",
+  "author": {
+    "name": "Hein Bekker",
+    "email": "hein@netbek.co.za",
+    "url": "http://netbek.co.za"
+  },
+  "license": {
+    "type": "AGPLv3",
+    "url": "http://www.gnu.org/licenses/agpl-3.0.txt"
+  },
+  "ignore": [
+    "bower_components",
+    "node_modules",
+    "test",
+    "tests",
+    "vendor",
+    "src"
+  ],
+  "dependencies": {
+    "angularjs": "1.2.x",
+    "nb-lodash": "https://github.com/netbek/nb-lodash.git#master"
+  },
+  "devDependencies": {
+    "matchMedia": "~0.2.0"
+  }
 }

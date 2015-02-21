@@ -8,18 +8,13 @@
 
 module.exports = function (grunt) {
 
-	var pkg = grunt.file.readJSON('package.json');
-
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-
 	grunt.initConfig({
-		pkg: pkg,
+		pkg: grunt.file.readJSON('package.json'),
 		meta: {
 			banner: ['/*',
 				' * <%= pkg.name %>',
 				' * <%= pkg.homepage %>',
+				' *',
 				' * @author <%= pkg.author.name %> <<%= pkg.author.email %>>',
 				' * @copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>',
 				' * @license <%= pkg.license.url %> <%= pkg.license.type %>',
@@ -53,6 +48,11 @@ module.exports = function (grunt) {
 			}
 		}
 	});
+
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('default', [
 		'jshint',
