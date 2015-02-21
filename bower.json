@@ -21,7 +21,7 @@
 		"src"
 	],
 	"dependencies": {
-		"angularjs": "~1.3.13",
+		"angularjs": "1.2.x",
 		"nb-lodash": "https://github.com/netbek/nb-lodash.git#master"
 	}
 }
